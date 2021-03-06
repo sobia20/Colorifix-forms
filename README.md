@@ -45,7 +45,7 @@ On `/{name}`, individual form data is visible. For example, `/request_color`.
 
 Clone the repository,
 
->`git clone https://github.com/sobia20/Colorifix-forms`
+>git clone https://github.com/sobia20/Colorifix-forms
 
 To start the <b>frontend</b>, 
 

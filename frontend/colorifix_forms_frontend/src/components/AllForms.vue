@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     fetchList: function() {
-      socket.send('{"action":"send-form-list"}');
+      socket.send('{"action":"get-form-name"}');
       socket.onmessage = message => {
         this.listOfForms = JSON.parse(message.data);
       };

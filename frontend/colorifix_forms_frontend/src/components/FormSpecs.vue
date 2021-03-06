@@ -5,17 +5,17 @@
       <v-card-subtitle class="card-subtitle-font-size">{{ $route.params.name }}</v-card-subtitle>
       <v-form ref="form" class="form-padding" lazy-validation>
         <div v-for="parameter in form_details.parameters" :key="parameter.name">
-          <FormSelect
+          <Select
             v-if="parameter.type == 'select'"
             :parameter="parameter" select=""
             v-model="formSubmit[parameter.name]"
           />
-          <FormStringOrNumber
+          <StringOrNumber
             v-if="parameter.type == 'string' || parameter.type == 'number'"
             :parameter="parameter" strOrNum=""
             v-model="formSubmit[parameter.name]"
           />
-          <FormCheckbox
+          <Checkbox
             v-if="parameter.type == 'bool'"
             :parameter="parameter" checked=""
             v-model="formSubmit[parameter.name]"
@@ -35,9 +35,9 @@
 <script>
 import { socket, socketCheck } from "../plugins/websocket";
 import { EventBus } from "../main";
-import FormSelect from "./InputFields/FormSelect";
-import FormStringOrNumber from "./InputFields/FormStringOrNumber";
-import FormCheckbox from "./InputFields/FormCheckbox";
+import Select from "./InputFields/Select";
+import StringOrNumber from "./InputFields/StringOrNumber";
+import Checkbox from "./InputFields/Checkbox";
 
 export default {
   data: () => {
@@ -51,9 +51,9 @@ export default {
     };
   },
   components: {
-    FormSelect,
-    FormStringOrNumber,
-    FormCheckbox
+    Select,
+    StringOrNumber,
+    Checkbox
   },
   methods: {
     validate() {
@@ -78,7 +78,7 @@ export default {
     },
     fetchSpecs() {
       socket.send(
-        `{"action":"send-form-specs","name": "${this.$route.params.name}"}`
+        `{"action":"get-form-specs","name": "${this.$route.params.name}"}`
       );
       socket.onmessage = message => {
         this.form_details = JSON.parse(message.data);

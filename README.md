@@ -18,7 +18,7 @@ The communication occurs on /ws channel using JSON with key `action` determining
 
 This flowchart explains the structure of the app.
 
-![alt text](https://github.com/sobia20/Colorifix-forms/readme.png)
+![alt text](https://github.com/sobia20/Colorifix-forms/blob/main/readme.png)
 
 For designing and UI, Vuetify is used.
 

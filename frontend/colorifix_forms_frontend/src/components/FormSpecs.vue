@@ -1,5 +1,5 @@
 <template>
-  <v-container  fluid>
+  <v-container fluid>
     <v-card flat outlined class="mx-auto card-margin card-background text-color">
       <v-card-title>{{ form_details.description }}</v-card-title>
       <v-card-subtitle class="card-subtitle-font-size">{{ $route.params.name }}</v-card-subtitle>
@@ -62,7 +62,6 @@ export default {
         this.formSubmit["form_name"] = this.form_details.name;
         this.formSubmit["action"] = "submit-form";
         this.formSubmit = JSON.stringify(this.formSubmit);
-        console.log(this.formSubmit)
         socket.send(this.formSubmit);
         socket.onmessage = message => {
           console.log(message.data);

@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import PageNotFound from "../components/PageNotFound";
 import FormSpecs from "../components/FormSpecs";
-import Form from "../components/Form";
+import AllForms from "../components/AllForms";
 
 const routes = [
   { path: "/", redirect: "/forms" },
@@ -11,7 +11,7 @@ const routes = [
     children: [
       {
         path: "/",
-        component: Form,
+        component: AllForms,
         props: true
       },
       {

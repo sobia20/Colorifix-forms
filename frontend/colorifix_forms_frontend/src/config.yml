@@ -1,0 +1,4 @@
+protocol: ws
+url: localhost
+port: 8000
+channel: ws

@@ -1,14 +1,14 @@
 <template>
   <v-app>
-    <v-app-bar  dense dark app>
+    <v-app-bar dense dark app>
       <v-spacer/>
-      <v-toolbar-title class="gold-heading" style="font-weight: 500;">{{heading}}</v-toolbar-title>
+      <v-toolbar-title style="font-weight: 500;">{{heading}}</v-toolbar-title>
       <v-spacer/>
     </v-app-bar>
     <v-main>
-      <v-img 
-      class="background-brightness"
-        height="90vh" 
+      <v-img
+        class="background-brightness"
+        height="90vh"
         src="https://colorifix.com/app/uploads/2019/09/aaron-burden-00QWN1J0g48-unsplash-2560x1831.jpg"
       >
         <router-view></router-view>
@@ -26,6 +26,7 @@
 </template>
 <script>
 import { EventBus } from "../main";
+
 export default {
   name: "Layout",
   components: {},
@@ -42,13 +43,10 @@ export default {
 };
 </script>
 <style>
-.v-image__image{
-  filter:brightness(60%);
+.v-image__image {
+  filter: brightness(60%);
 }
-.colorifix-color{
-  background-color: rgb(255, 168, 20)
-}
-gold-heading{
-  color:rgb(255, 229, 154)
+.colorifix-color {
+  color: rgb(255, 168, 20);
 }
 </style>

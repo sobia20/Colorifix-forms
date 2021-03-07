@@ -21,12 +21,10 @@ export default {
   computed: {
     inputVal: {
         get() {
-            console.log("GET: ",this.strOrNum)
-            return this.strOrNum;
+          return this.strOrNum;
         },
         set(selected) {
-            console.log("SET: ",selected)
-            this.$emit('input', selected);
+          this.$emit('input', selected);
         }
     }
     }

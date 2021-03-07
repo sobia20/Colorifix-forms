@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+
+  fastapi:
+    build: ./backend
+    image: colorifix-backend
+    container_name: colorifix-fast-app
+    restart: always
+    ports:
+      - "8000:8000"
+    expose:
+      - 8000
+
+  nginx:
+    build: ./frontend/colorifix_forms_frontend
+    container_name: colorifix-vue-app
+    restart: always
+    ports:
+      - "8080:80"

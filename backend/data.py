@@ -1,13 +1,11 @@
 import json
-
-PATH = './'
-FILE_NAME = 'data.json'
-DATA_PATH = '%s%s' % (PATH, FILE_NAME)
+from config import PATH, DATA_PATH, FILE_NAME
 
 class Data:
     def __init__(self):
         self.data = {}
         self.form_names = []
+        self.data_path = DATA_PATH
         self.load_data()
 
     def flush_cache(self):
@@ -18,7 +16,7 @@ class Data:
     def load_data(self):
         '''Loads the JSON config file'''
         self.flush_cache()
-        with open(DATA_PATH, 'r') as fd:
+        with open(self.data_path, 'r') as fd:
             self.data = fd.read()
             self.data = json.loads(self.data)
 

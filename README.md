@@ -20,56 +20,49 @@ This flowchart explains the structure of the app.
 
 ![alt text](https://github.com/sobia20/Colorifix-forms/blob/main/readme.png)
 
-For designing and UI, Vuetify is used.
+Vuetify is used for designing and UI.
 
 `localhost:8080/` redirects to `localhost:8080/forms`.
 This displays the list of forms available.
 We can filter the form through a search bar as well.
 
-Clicking on a form routes to the form specifications `localhost:8080/forms/{form_name}`.
+Clicking on a form routes to the form specifications `localhost:8080/forms/:name`.
 
 For example, `localhost:8080/forms/request_color`.
 
+
 ## Backend:
 
-Python 3.8.2 is used. The architecture follows Singleton design pattern.
+Python 3.7.7 is used. The architecture follows Singleton design pattern.
 There is a class Data in data.py that has an object created once which can be imported to reuse wherever needed in the application.
 
-On `/`, JSON data from the file is hosted.
+On `/`, JSON data from the file is hosted
 
 If there is any change in data, we can cater to that by going to `/update` and back to `/`. The changes would be added to `/`.
 
-On `/{name}`, individual form data is visible. For example, `/request_color`.
+A refresh on the frontend would sync the data.
 
-## How to run the app:
+### Testing the app:
+
+Tests reside in /tests directory. 
+To test the app, simply run 
+
+> python -m pytest
+
+This will run the test cases. To view coverage report, 
+
+> coverage report
+
+## Running the app:
 
 Clone the repository,
 
 >git clone https://github.com/sobia20/Colorifix-forms
 
-To start the <b>frontend</b>, 
+>cd Colorifix-forms
 
->`cd Colorifix-forms/frontend/colorifix_forms_frontend`
+And start the container,
 
-To install dependencies,
+>docker-compose up
 
->`npm install`
-
-To run the server in dev mode,
-
->`npm run serve`
-
-To start <b>backend</b>
-
->`cd Colorifix-forms/backend` 
-
-Activate the python virtual environment,
-
->`source env/bin/activate`
-
-And to start the server,
->`uvicorn main:app --reload`
-
-# Or
-
->`docker-compose up`
+ The frontend is using nginx server and fast api is using uvicorn. 

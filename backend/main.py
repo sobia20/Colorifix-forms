@@ -23,6 +23,7 @@ def show_data_file():
 def update_data():
     '''Loads data again when routed to /update'''
     data_model.load_data()
+    print('Form Updated')
 
 
 @app.websocket("/ws")
@@ -33,18 +34,13 @@ async def get_form_name(websocket: WebSocket):
         data = await websocket.receive_text()
         data = json.loads(data)
         if data['action'] == 'get-form-name':
+            update_data()
             await websocket.send_json(data_model.get_all_form_names())
         elif data['action'] == 'get-form-specs':
-            await websocket.send_json(get_form_specs(data['name']))
+            await websocket.send_json(data_model.get_specs(data['name']))
         elif data['action'] == 'submit-form':
             del data['action']
             await websocket.send_text(submit_form(data['form_name'], data))
-
-
-@app.get('/{name}')
-def get_form_specs(name: str):
-    '''Returns the selected form's specification'''
-    return data_model.get_specs(name)
 
 
 def submit_form(name: str, data: json):

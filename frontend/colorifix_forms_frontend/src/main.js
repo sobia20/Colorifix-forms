@@ -13,6 +13,10 @@ const router = new VueRouter({
 });
 
 export const EventBus = new Vue();
+const api_protocol = 'http'
+const api_url = 'localhost'
+const api_port = '8000'
+export const url = `${api_protocol}://${api_url}:${api_port}/`
 new Vue({
   vuetify,
   router,

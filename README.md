@@ -35,7 +35,8 @@ The key `action` dictates the required action:
 
 This flowchart explains the structure of the frontend components.
 
-![alt text](https://github.com/sobia20/Colorifix-forms/blob/main/readme.png)
+![image](https://user-images.githubusercontent.com/23616603/110260107-badc7c80-7fcc-11eb-9547-de15a82fcba4.png)
+
 
 [Vuetify](https://vuetifyjs.com/en/) components are used for UI.
 

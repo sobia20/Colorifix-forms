@@ -7,8 +7,10 @@ This is a web service for Colorifix researchers to fill in their latest findings
 Schema for all forms are given in a JSON config file called `data.json`.
 
 The frontend is in [Vue.js](https://vuejs.org/) and backend uses [FastApi](https://fastapi.tiangolo.com/). 
+
 Frontend is served via [nginx](https://www.nginx.com/).
-Backend is served with [uvicorn](https://www.uvicorn.org/)
+
+Backend is served with [uvicorn](https://www.uvicorn.org/).
 
 ## Getting Started:
 
@@ -48,15 +50,18 @@ For example, `localhost:8080/forms/request_color`.
 
 ## FAST-API Backend:
 
-The FastApi backend runs on Python 3.7.7
+The FastApi backend runs on Python 3.7.7.
+
 Singleton `Data` Class, encapsulates how the backend interact with the schema file.
 
 `/`:        The forms schema can be accessed.
+
 `/update`:  The data is reloaded from the file (if schema is updated)
 
 ### Testing the app:
 
 Tests reside in /tests directory. 
+
 To test the app, simply run 
 
 ```

@@ -1,5 +1,7 @@
 # Colorifix Forms
 
+![image](https://user-images.githubusercontent.com/23616603/110259932-e90d8c80-7fcb-11eb-947f-860bdfcd7c3b.png)
+
 This is a web service for Colorifix researchers to fill in their latest findings as they are discovered.
 
 Schema for all forms are given in a JSON config file called `data.json`.

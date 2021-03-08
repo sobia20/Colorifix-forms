@@ -22,12 +22,15 @@ The communication between frontend and backend occurs on /ws channel using JSON.
 The key `action` dictates the required action:
 
 `get-form-name`: Returns the list of all forms available.
+
 `get-form-specs`: Returns the specifications of the chosen form.
+
 `submit-form`: Sends form data to the server.
 
 ## Vue.js Frontend:
 
 This flowchart explains the structure of the frontend components.
+
 ![alt text](https://github.com/sobia20/Colorifix-forms/blob/main/readme.png)
 
 [Vuetify](https://vuetifyjs.com/en/) components are used for UI.
@@ -37,6 +40,7 @@ This displays the list of forms available.
 Forms can be filtered using search bar.
 
 Clicking on a form routes to the form specifications `localhost:8080/forms/:name`.
+
 For example, `localhost:8080/forms/request_color`.
 
 
